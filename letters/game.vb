@@ -1,5 +1,9 @@
-﻿Public Class game
+﻿Imports System.Collections
+Imports System.Random
+Public Class game
     Const TICK_RATE As Decimal = 0.1
+    Dim POSSIBLE_WORDS() As String = Split(My.Resources.words, ",")
+    Dim HASHED_WORDS As HashSet(Of String) = New HashSet(Of String)(POSSIBLE_WORDS)
 
     Dim remainingTime As Decimal = 10
     Dim playTime As Decimal = 0
@@ -12,6 +16,10 @@
         clock.Enabled = True
         combo.Enabled = False
     End Sub
+
+    Private Function chooseWord() As String
+
+    End Function
 
     Private Sub clock_Tick(sender As Object, e As EventArgs) Handles clock.Tick
         remainingTime -= TICK_RATE
