@@ -13,13 +13,27 @@
         combo.Enabled = False
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Me.Close()
-    End Sub
-
     Private Sub clock_Tick(sender As Object, e As EventArgs) Handles clock.Tick
         remainingTime -= TICK_RATE
         playTime += TICK_RATE
         timeFromLastMatch += TICK_RATE
+    End Sub
+
+    Private Sub flashRed()
+
+    End Sub
+
+    Private Sub press_Enter(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles input.KeyPress
+        If e.KeyChar = Convert.ToChar(13) Then
+            If input.Text.Length = 4 Then
+
+            Else
+                flashRed()
+            End If
+        End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
     End Sub
 End Class
