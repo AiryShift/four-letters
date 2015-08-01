@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class game
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class game
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.letter1 = New System.Windows.Forms.Label()
@@ -31,7 +31,6 @@ Partial Class game
         Me.combo = New System.Windows.Forms.Timer(Me.components)
         Me.Button1 = New System.Windows.Forms.Button()
         Me.input = New System.Windows.Forms.TextBox()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SuspendLayout()
         '
         'letter1
@@ -79,7 +78,7 @@ Partial Class game
         '
         'combo
         '
-        Me.combo.Interval = 1000
+        Me.combo.Interval = 800
         '
         'Button1
         '
@@ -98,11 +97,6 @@ Partial Class game
         Me.input.Size = New System.Drawing.Size(230, 46)
         Me.input.TabIndex = 5
         Me.input.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
         'game
         '
@@ -130,5 +124,4 @@ Partial Class game
     Friend WithEvents combo As Timer
     Friend WithEvents Button1 As Button
     Friend WithEvents input As TextBox
-    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
 End Class
