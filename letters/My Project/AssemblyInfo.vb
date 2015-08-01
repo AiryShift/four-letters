@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("letters")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("letters")>
-<Assembly: AssemblyCopyright("Copyright ©  2015")>
+<Assembly: AssemblyTitle("Four Letters")>
+<Assembly: AssemblyDescription("A rendition of the game four letters")>
+<Assembly: AssemblyCompany("Julian Tu")>
+<Assembly: AssemblyProduct("Source can be found at https://github.com/AiryShift/four-letters")>
+<Assembly: AssemblyCopyright("Licensed under the MIT License")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>

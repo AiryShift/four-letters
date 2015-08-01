@@ -1,3 +1,3 @@
-﻿Public Class game
+﻿Public Class main
 
 End Class

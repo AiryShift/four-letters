@@ -72,17 +72,23 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="game.Designer.vb">
-      <DependentUpon>game.vb</DependentUpon>
+    <Compile Include="AboutBox.Designer.vb">
+      <DependentUpon>AboutBox.vb</DependentUpon>
     </Compile>
-    <Compile Include="game.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="main.vb">
+    <Compile Include="AboutBox.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="main.Designer.vb">
       <DependentUpon>main.vb</DependentUpon>
+    </Compile>
+    <Compile Include="main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="game.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="game.Designer.vb">
+      <DependentUpon>game.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -102,8 +108,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="main.resx">
       <DependentUpon>main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="game.resx">
+      <DependentUpon>game.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
