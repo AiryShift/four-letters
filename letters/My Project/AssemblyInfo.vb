@@ -9,9 +9,9 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("Four Letters")>
-<Assembly: AssemblyDescription("A rendition of the game four letters")>
+<Assembly: AssemblyDescription("A rendition of the game four letters. Source can be found at https://github.com/AiryShift/four-letters")>
 <Assembly: AssemblyCompany("Julian Tu")>
-<Assembly: AssemblyProduct("Source can be found at https://github.com/AiryShift/four-letters")>
+<Assembly: AssemblyProduct("Four Letters")>
 <Assembly: AssemblyCopyright("Licensed under the MIT License")>
 <Assembly: AssemblyTrademark("")>
 

@@ -28,9 +28,9 @@ Partial Class game
         Me.letter3 = New System.Windows.Forms.Label()
         Me.letter4 = New System.Windows.Forms.Label()
         Me.clock = New System.Windows.Forms.Timer(Me.components)
-        Me.combo = New System.Windows.Forms.Timer(Me.components)
         Me.Button1 = New System.Windows.Forms.Button()
         Me.input = New System.Windows.Forms.TextBox()
+        Me.scoreDisplay = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'letter1
@@ -76,10 +76,6 @@ Partial Class game
         'clock
         '
         '
-        'combo
-        '
-        Me.combo.Interval = 800
-        '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(597, 376)
@@ -98,11 +94,22 @@ Partial Class game
         Me.input.TabIndex = 5
         Me.input.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'scoreDisplay
+        '
+        Me.scoreDisplay.AutoSize = True
+        Me.scoreDisplay.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.scoreDisplay.Location = New System.Drawing.Point(209, 263)
+        Me.scoreDisplay.Name = "scoreDisplay"
+        Me.scoreDisplay.Size = New System.Drawing.Size(36, 39)
+        Me.scoreDisplay.TabIndex = 6
+        Me.scoreDisplay.Text = "0"
+        '
         'game
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(684, 411)
+        Me.Controls.Add(Me.scoreDisplay)
         Me.Controls.Add(Me.input)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.letter4)
@@ -121,7 +128,7 @@ Partial Class game
     Friend WithEvents letter3 As Label
     Friend WithEvents letter4 As Label
     Friend WithEvents clock As Timer
-    Friend WithEvents combo As Timer
     Friend WithEvents Button1 As Button
     Friend WithEvents input As TextBox
+    Friend WithEvents scoreDisplay As Label
 End Class
