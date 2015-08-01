@@ -2,8 +2,9 @@ from random import randrange, shuffle
 from time import time, sleep
 from threading import Thread
 
-COMBO_ALLOWED_TIME = 0.8
-timeLeft = 15
+COMBO_ALLOWED_TIME = 2
+MAX_TIME = 20
+timeLeft = MAX_TIME
 score = 0
 currentWord = ""
 
@@ -21,7 +22,7 @@ def selectWord():
 def printWord(word):
     word = list(word)
     shuffle(word)
-    print("Form an anagram from: {}. You have {} seconds left.".format(
+    print("Form an anagram from: {}. You have {:f} seconds left.".format(
         ''.join(word), timeLeft))
 
 
@@ -37,14 +38,18 @@ def game():
         while timeLeft >= 0:
             printWord(currentWord)
             guessedWord = input("Word: ")
-            if guessedWord == currentWord:
+            if guessedWord in WORD_SET:
                 if time() - timeOfLastMatch < COMBO_ALLOWED_TIME:
                     scoreMultiplier += 1
                 else:
                     scoreMultiplier = 0
                 score += 1 + scoreMultiplier
-                timeLeft += 3
+                timeLeft += 5
+                if timeLeft > MAX_TIME:
+                    timeLeft = MAX_TIME
                 break
+            else:
+                print('Incorrect, try again')
 
 
 def timer():
