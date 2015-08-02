@@ -4,6 +4,7 @@ from threading import Thread
 
 COMBO_ALLOWED_TIME = 2
 MAX_TIME = 20
+EXTRA_TIME_PER_WORD = 5
 timeLeft = MAX_TIME
 score = 0
 currentWord = ""
@@ -22,8 +23,12 @@ def selectWord():
 def printWord(word):
     word = list(word)
     shuffle(word)
-    print("Form an anagram from: {}. You have {:f} seconds left.".format(
-        ''.join(word), timeLeft))
+    print("""Form an anagram from:
+ {}
+{} {}
+ {}
+You have {:f} seconds left.""".format(
+         word[0], word[1], word[2], word[3], timeLeft))
 
 
 def game():
@@ -33,23 +38,23 @@ def game():
     scoreMultiplier = 0
     while timeLeft >= 0:
         currentWord = selectWord()
-        printWord(currentWord)
         timeOfLastMatch = time()
         while timeLeft >= 0:
             printWord(currentWord)
             guessedWord = input("Word: ")
-            if guessedWord in WORD_SET:
-                if time() - timeOfLastMatch < COMBO_ALLOWED_TIME:
-                    scoreMultiplier += 1
+            if timeLeft >= 0:
+                if guessedWord in WORD_SET:
+                    if time() - timeOfLastMatch < COMBO_ALLOWED_TIME:
+                        scoreMultiplier += 1
+                    else:
+                        scoreMultiplier = 0
+                    score += 1 + scoreMultiplier
+                    timeLeft += EXTRA_TIME_PER_WORD
+                    if timeLeft > MAX_TIME:
+                        timeLeft = MAX_TIME
+                    break
                 else:
-                    scoreMultiplier = 0
-                score += 1 + scoreMultiplier
-                timeLeft += 5
-                if timeLeft > MAX_TIME:
-                    timeLeft = MAX_TIME
-                break
-            else:
-                print('Incorrect, try again')
+                    print("Incorrect, try again")
 
 
 def timer():
@@ -59,7 +64,8 @@ def timer():
     while timeLeft >= 0:
         sleep(0.1)
         timeLeft -= 0.1
-    print("\nYour score is: {}, thank you for playing. The word was {}.".format(
+    print("""\nYour score is: {}, thank you for playing. The word was {}
+Press enter to exit.""".format(
         score, currentWord))
 
 if __name__ == "__main__":
